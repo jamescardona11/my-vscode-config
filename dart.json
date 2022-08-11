@@ -1,0 +1,396 @@
+{
+  // J11 Snippets for flutter
+  //
+  // -------- Misc --------
+  // impM: Material Package
+  // impC: Cupertino Package
+  // impF: Foundation Package
+  // sout: Print Message like Java
+  // msize: Instance of MediaQuery
+  // thof: Instance of ThemeData
+  // ptm: Mock statement
+  // ptg: Part statement
+  // ptf: Part 'Freezed' statement
+  // toStr: toString
+  //
+  // -------- Base Flutter --------
+  // mateapp: Create Material App
+  // fstless: Flutter Stateless snippet
+  // flwidget: Flutter Stateless Widget
+  // wwidget: Flutter Stateless Without Import
+  // flpage: Flutter Page with Scaffold
+  // fscreen: Flutter Page with Scaffold and AppBar
+  // initS: InitState
+  // dis: Dispose
+  // didChangeD: didChangeDependencies
+  // didUpdateW: didUpdateWidget
+  // inheritedW: Inherited Widget
+  //
+  // -------- Builders Flutter --------
+  //	fstream: Stream Builder
+  //	ffuture: Future Builder
+  //	fanimated: Animated Builder
+  //	snk: Sink
+  //	strm: Stream
+  //	subj: Subject
+  //
+  // -------- Custom Widgets --------
+  // ccbutton: Custom circular Button
+  // cfbutton: Custom floating Button
+  // cobutton: Custom outline Button
+  // ciconbtn: Custom circular icon Button
+  // ccard: Custom rounded card
+  // cappbar: Custom back appBar
+  //
+  //
+  //
+  //
+  //
+  //
+  // -------- Misc --------
+  "Material Package": {
+    "prefix": "impM",
+    "body": "import 'package:flutter/material.dart';",
+    "description": "Import flutter material package"
+  },
+  "Cupertino Package": {
+    "prefix": "impC",
+    "body": "import 'package:flutter/cupertino.dart';",
+    "description": "Import Flutter Cupertino package"
+  },
+  "Foundation Package": {
+    "prefix": "impF",
+    "body": "import 'package:flutter/foundation.dart';",
+    "description": "Import Flutter foundation package"
+  },
+  "Print Message like Java": {
+    "prefix": "sout",
+    "body": ["print(${1:msg});"],
+    "description": "Print for dart"
+  },
+  "Instance of MediaQuery": {
+    "prefix": "msize",
+    "body": ["final size = MediaQuery.of(context).size;\t"],
+    "description": "Create a instance of MediaQuery"
+  },
+  "Instance of ThemeData": {
+    "prefix": "thof",
+    "body": ["Theme.of(context)"],
+    "description": "Create a instance of ThemeData"
+  },
+  "Mock statement": {
+    "prefix": "ptm",
+    "body": ["import '${TM_FILENAME_BASE}.mocks.dart';"],
+    "description": "Creates a filled-in part statement for mocks"
+  },
+  "Part statement": {
+    "prefix": "ptg",
+    "body": ["part '${TM_FILENAME_BASE}.g.dart';"],
+    "description": "Creates a filled-in part statement for generate"
+  },
+  "Part 'Freezed' statement": {
+    "prefix": "ptf",
+    "body": ["part '${TM_FILENAME_BASE}.freezed.dart';"],
+    "description": "Creates a filled-in freezed part statement"
+  },
+  "toString": {
+    "prefix": "toStr",
+    "body": ["@override", "String toString() => ${1:toString}"],
+    "description": "Returns a string representation of this object."
+  },
+  // -------- Base Flutter --------
+  "Create Material App": {
+    "prefix": "mateapp",
+    "description": "Create a MaterialApp",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "",
+      "void main() => runApp(const MyApp());",
+      "",
+      "class MyApp extends StatelessWidget {",
+      "  const MyApp({Key? key}): super(key: key);",
+      "",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return MaterialApp(",
+      "      title: 'Material App',",
+      "      home: HomePage(),",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "class HomePage extends StatelessWidget {",
+      "  /// default constructor",
+      "  const HomePage({",
+      "    Key? key,",
+      "  }) : super(key: key);",
+      " ",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Scaffold(",
+      "      appBar: AppBar(",
+      "        title: Text('AppBar Text'),",
+      "      ),",
+      "      body: Container(",
+      "        child: Text('HomePage'),",
+      "      ),",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ]
+  },
+  "Flutter Page with Scaffold": {
+    "prefix": "flpage",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      " ",
+      "class ${1:NAME}Page extends StatelessWidget {",
+      " ",
+      "  /// default constructor",
+      "  const ${1:NAME} ({",
+      "    Key? key,",
+      "  }) : super(key: key);",
+      " ",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Scaffold(",
+      "      body: Center(",
+      "        child: Text('New Page'),",
+      "      ),",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Create a new Page for stateless with scaffold and 'Page' postfix"
+  },
+  "Flutter Page with Scaffold and AppBar": {
+    "prefix": "flscreen",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      " ",
+      "class ${1:NAME}Page extends StatelessWidget {",
+      " ",
+      "  /// default constructor",
+      "  const ${1:NAME} ({",
+      "    Key? key,",
+      "  }) : super(key: key);",
+      " ",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Scaffold(",
+      "       title: Text('${1:App Bar}'),",
+      "      ),",
+      "      body: Center(",
+      "        child: Text('New Page'),",
+      "      ),",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Create a new Page for stateless with scaffold and appBar"
+  },
+  "Flutter Stateless snippet": {
+    "prefix": "fstless",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      " ",
+      "class ${1:NAME} extends StatelessWidget {",
+      "  /// default constructor",
+      "  const ${1:NAME} ({",
+      "    Key? key,",
+      "  }) : super(key: key);",
+      " ",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return ${2:Container}(${0});",
+      "  }",
+      "}"
+    ],
+    "description": "Create a basic StatelessWidget with the postfix Widget word and import material.dart"
+  },
+  "Flutter Stateless Widget": {
+    "prefix": "flwidget",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      " ",
+      "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Widget extends StatelessWidget {",
+      "  /// default constructor",
+      "  const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Widget ({",
+      "    Key? key,",
+      "  }) : super(key: key);",
+      " ",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return ${2:Container}(${0});",
+      "  }",
+      "}"
+    ],
+    "description": "Create a basic StatelessWidget with the postfix Widget word and import material.dart"
+  },
+  "StatelessWidget Without Import": {
+    "prefix": "wwidget",
+    "body": [
+      " ",
+      "class ${1:NAME} extends StatelessWidget {",
+      " ",
+      "  const ${1:NAME} ({",
+      "    Key? key,",
+      "  }) : super(key: key);",
+      " ",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return ${2:Container}(${0});",
+      "  }",
+      "}"
+    ],
+    "description": "Create a widget for stateless"
+  },
+  "Stateful Widget": {
+    "prefix": "fstful",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      " ",
+      "class ${1:NAME} extends StatefulWidget {",
+      "  const ${1:NAME}({super.key});\n",
+      "  @override",
+      "  State<${1:index}> createState() => _${1:WidgetName}State();",
+      "}\n",
+      "class _${1:index}State extends State<${1:index}> {",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Container();",
+      "  }",
+      "}"
+    ],
+    "description": "Create a Stateful widget"
+  },
+  "InitState": {
+    "prefix": "initS",
+    "body": [
+      "@override",
+      "void initState() {",
+      "  super.initState();",
+      "  ${0:}",
+      "}"
+    ],
+    "description": "Called when this object is inserted into the tree. The framework will call this method exactly once for each State object it creates."
+  },
+  "Dispose": {
+    "prefix": "dis",
+    "body": [
+      "@override",
+      "void dispose() {",
+      "  ${0:}",
+      "  super.dispose();",
+      "}"
+    ],
+    "description": "Called when this object is removed from the tree permanently. The framework calls this method when this State object will never build again."
+  },
+  "didChangeDependencies": {
+    "prefix": "didChangeD",
+    "body": [
+      "@override",
+      "void didChangeDependencies() {",
+      "  super.didChangeDependencies();",
+      "  ${0:}",
+      "}"
+    ],
+    "description": "Called when a dependency of this State object changes"
+  },
+  "didUpdateWidget": {
+    "prefix": "didUpdateW",
+    "body": [
+      "@override",
+      "void didUpdateWidget (${1:Type} ${2:oldWidget}) {",
+      "  super.didUpdateWidget(${2:oldWidget});",
+      "  ${0:}",
+      "}"
+    ],
+    "description": "Called whenever the widget configuration changes."
+  },
+  "Inherited Widget": {
+    "prefix": "inheritedW",
+    "body": [
+      "class ${1:Name} extends InheritedWidget {",
+      "  const ${1:Name}({super.key, required this.child}) : super(child: child);",
+      "",
+      "  final Widget child;",
+      "",
+      "  static ${1:Name}? of(BuildContext context) {",
+      "    return context.dependOnInheritedWidgetOfExactType<${1:Name}>();",
+      "  }",
+      "",
+      "  @override",
+      "  bool updateShouldNotify(${1:Name} oldWidget) {",
+      "    return ${2:true};",
+      "  }",
+      "}"
+    ],
+    "description": "Class used to propagate information down the widget tree"
+  },
+  // -------- Builders Flutter --------
+  "Flutter StreamBuilder widget snippet": {
+    "prefix": "fstream",
+    "body": [
+      "StreamBuilder<${1:dynamic}>(        ",
+      "  stream: ${2:yourStream},",
+      "  builder: (BuildContext context, AsyncSnapshot<${1:dynamic}> snapshot) {",
+      "      if (snapshot.hasData) {",
+      "       // TODO: do something with the data",
+      "       return ${3:Container()};",
+      "      } else if (snapshot.hasError) {",
+      "      // TODO: do something with the error",
+      "       return ${4:Text(snapshot.error.toString())};",
+      "      }",
+      "      // TODO: the data is not ready, show a loading indicator",
+      "      return ${5:Center(child: CircularProgressIndicator())};",
+      "   },",
+      ")"
+    ],
+    "description": "Flutter StreamBuilder widget snippet"
+  },
+  "Future Builder": {
+    "prefix": "ffuture",
+    "body": [
+      "FutureBuilder(",
+      "  future: ${1:Future},",
+      "  initialData: ${2:InitialData},",
+      "  builder: (BuildContext context, AsyncSnapshot snapshot) {",
+      "    return ${3:};",
+      "  },",
+      "),"
+    ],
+    "description": "Creates a Future Builder. This builds itself based on the latest snapshot of interaction with a Future."
+  },
+  "Animated Builder": {
+    "prefix": "fanimated",
+    "body": [
+      "AnimatedBuilder(",
+      "  animation: ${1:animation},",
+      "  child: ${2:child},",
+      "  builder: (BuildContext context, Widget? child) {",
+      "    return ${3:};",
+      "  },",
+      "),"
+    ],
+    "description": "Creates an Animated Builder. The widget specified to `child` is passed to the `builder`"
+  },
+  "Stream": {
+    "prefix": "strm",
+    "body": [
+      "Stream<${1:type}> get ${2:name} => _${2:name}Controller.stream;",
+      "final _${2:name}Controller = StreamController<${1:type}>();"
+    ],
+    "description": "A source of asynchronous data events. A stream can be of any data type <T>"
+  },
+  "Subject": {
+    "prefix": "subj",
+    "body": [
+      "Stream<${1:type}> get ${2:name} => _${2:name}Subject.stream;",
+      "final _${2:name}Subject = BehaviorSubject<${1:type}>();"
+    ],
+    "description": "A BehaviorSubject is also a broadcast StreamController which returns an Observable rather than a Stream."
+  }
+  // -------- Custom Widgets --------
+}
